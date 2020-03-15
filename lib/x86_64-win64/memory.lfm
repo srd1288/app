@@ -1,0 +1,71 @@
+object FormMemory: TFormMemory
+  Left = 803
+  Height = 800
+  Top = 116
+  Width = 800
+  BorderIcons = [biSystemMenu]
+  Caption = 'FormMemory'
+  ClientHeight = 800
+  ClientWidth = 800
+  Constraints.MaxHeight = 800
+  Constraints.MaxWidth = 800
+  Constraints.MinHeight = 800
+  Constraints.MinWidth = 800
+  OnCreate = FormCreate
+  LCLVersion = '2.0.6.0'
+  object pnlGame: TPanel
+    Left = 0
+    Height = 600
+    Top = 0
+    Width = 800
+    TabOrder = 0
+  end
+  object pnlScore: TPanel
+    Left = 0
+    Height = 202
+    Top = 600
+    Width = 500
+    ClientHeight = 202
+    ClientWidth = 500
+    TabOrder = 1
+    object lblScore: TLabel
+      Left = 1
+      Height = 200
+      Top = 1
+      Width = 498
+      Align = alClient
+      Alignment = taCenter
+      Caption = 'Score: 0'
+      Font.Height = -53
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object pnlBtn: TPanel
+    Left = 500
+    Height = 200
+    Top = 600
+    Width = 300
+    ClientHeight = 200
+    ClientWidth = 300
+    TabOrder = 2
+    object btnDone: TButton
+      Left = 8
+      Height = 185
+      Top = 8
+      Width = 288
+      Caption = 'ГОТОВО'
+      Font.Height = -53
+      OnClick = btnDoneClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object timerGame: TTimer
+    Interval = 10
+    OnTimer = timerGameTimer
+    left = 24
+    top = 8
+  end
+end

@@ -1,0 +1,82 @@
+object FormMain: TFormMain
+  Left = 663
+  Height = 300
+  Top = 403
+  Width = 900
+  BorderIcons = [biSystemMenu]
+  Caption = 'App'
+  ClientHeight = 300
+  ClientWidth = 900
+  Constraints.MaxHeight = 300
+  Constraints.MaxWidth = 900
+  Constraints.MinHeight = 300
+  Constraints.MinWidth = 900
+  LCLVersion = '2.0.6.0'
+  object pnlAttention: TPanel
+    Left = 0
+    Height = 300
+    Top = 0
+    Width = 300
+    Caption = 'pnlAttention'
+    ClientHeight = 300
+    ClientWidth = 300
+    TabOrder = 0
+    object btnAttention: TButton
+      Left = 25
+      Height = 250
+      Top = 25
+      Width = 250
+      Caption = 'Внимание'
+      Constraints.MaxHeight = 250
+      Constraints.MaxWidth = 250
+      Constraints.MinHeight = 250
+      Constraints.MinWidth = 250
+      Font.Height = -27
+      OnClick = btnAttentionClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object pnlMemory: TPanel
+    Left = 300
+    Height = 300
+    Top = 0
+    Width = 300
+    Caption = 'pnlMemory'
+    ClientHeight = 300
+    ClientWidth = 300
+    TabOrder = 1
+    object btnMemory: TButton
+      Left = 25
+      Height = 250
+      Top = 25
+      Width = 250
+      Caption = 'Память'
+      Font.Height = -27
+      OnClick = btnMemoryClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object pnlLogic: TPanel
+    Left = 600
+    Height = 300
+    Top = 0
+    Width = 300
+    Caption = 'pnlLogic'
+    ClientHeight = 300
+    ClientWidth = 300
+    TabOrder = 2
+    object btnLogic: TButton
+      Left = 25
+      Height = 250
+      Top = 25
+      Width = 250
+      Caption = 'Логика'
+      Font.Height = -27
+      OnClick = btnLogicClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+end

@@ -1,0 +1,76 @@
+object FormLogic: TFormLogic
+  Left = 653
+  Height = 400
+  Top = 182
+  Width = 800
+  Caption = 'FormLogic'
+  ClientHeight = 400
+  ClientWidth = 800
+  Constraints.MaxHeight = 400
+  Constraints.MaxWidth = 800
+  Constraints.MinHeight = 400
+  Constraints.MinWidth = 800
+  OnCreate = FormCreate
+  LCLVersion = '2.0.6.0'
+  object pnlGame: TPanel
+    Left = 0
+    Height = 200
+    Top = 0
+    Width = 500
+    Caption = 'Seq'
+    Font.Height = -67
+    ParentFont = False
+    TabOrder = 0
+  end
+  object pnlInput: TPanel
+    Left = 500
+    Height = 200
+    Top = 0
+    Width = 300
+    ClientHeight = 200
+    ClientWidth = 300
+    TabOrder = 1
+    object editInput: TEdit
+      Left = 48
+      Height = 79
+      Top = 56
+      Width = 200
+      Font.Height = -53
+      NumbersOnly = True
+      ParentFont = False
+      TabOrder = 0
+      Text = '0'
+    end
+  end
+  object pnlScore: TPanel
+    Left = 0
+    Height = 200
+    Top = 200
+    Width = 500
+    Caption = 'Score: 0'
+    Font.Height = -53
+    ParentFont = False
+    TabOrder = 2
+  end
+  object pnlBtn: TPanel
+    Left = 500
+    Height = 200
+    Top = 200
+    Width = 300
+    Caption = 'pnlBtn'
+    ClientHeight = 200
+    ClientWidth = 300
+    TabOrder = 3
+    object btnOk: TButton
+      Left = 5
+      Height = 190
+      Top = 5
+      Width = 290
+      Caption = 'OK'
+      Font.Height = -133
+      OnClick = btnOkClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+end
