@@ -1,16 +1,17 @@
 object FormMain: TFormMain
-  Left = 956
-  Height = 300
-  Top = 617
+  Left = 629
+  Height = 320
+  Top = 314
   Width = 900
   BorderIcons = [biSystemMenu]
   Caption = 'App'
   ClientHeight = 300
   ClientWidth = 900
-  Constraints.MaxHeight = 300
+  Constraints.MaxHeight = 320
   Constraints.MaxWidth = 900
-  Constraints.MinHeight = 300
+  Constraints.MinHeight = 320
   Constraints.MinWidth = 900
+  Menu = MainMenu
   LCLVersion = '2.0.6.0'
   object pnlAttention: TPanel
     Left = 0
@@ -77,6 +78,14 @@ object FormMain: TFormMain
       OnClick = btnLogicClick
       ParentFont = False
       TabOrder = 0
+    end
+  end
+  object MainMenu: TMainMenu
+    left = 16
+    top = 8
+    object itemHelp: TMenuItem
+      Caption = 'Справка'
+      OnClick = itemHelpClick
     end
   end
 end

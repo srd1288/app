@@ -5,7 +5,8 @@ unit main;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
+  Menus;
 
 type
 
@@ -15,12 +16,15 @@ type
     btnAttention: TButton;
     btnMemory: TButton;
     btnLogic: TButton;
+    MainMenu: TMainMenu;
+    itemHelp: TMenuItem;
     pnlAttention: TPanel;
     pnlMemory: TPanel;
     pnlLogic: TPanel;
     procedure btnAttentionClick(Sender: TObject);
     procedure btnLogicClick(Sender: TObject);
     procedure btnMemoryClick(Sender: TObject);
+    procedure itemHelpClick(Sender: TObject);
   private
 
   public
@@ -52,6 +56,11 @@ end;
 procedure TFormMain.btnMemoryClick(Sender: TObject);
 begin
   FormMemory.ShowModal;
+end;
+
+procedure TFormMain.itemHelpClick(Sender: TObject);
+begin
+  FormHelp.ShowModal;
 end;
 
 end.
