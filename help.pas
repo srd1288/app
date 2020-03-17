@@ -5,10 +5,14 @@ unit help;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
 type
+
+  { TFormHelp }
+
   TFormHelp = class(TForm)
+    Memo1: TMemo;
   private
 
   public
