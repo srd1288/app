@@ -1,0 +1,8 @@
+object FormHelp: TFormHelp
+  Left = 664
+  Height = 423
+  Top = 161
+  Width = 449
+  Caption = 'Cправка'
+  LCLVersion = '2.0.6.0'
+end
