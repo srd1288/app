@@ -33,7 +33,7 @@ var
 implementation
 
 uses
-  attention, memory;
+  attention, memory, logic;
 
 {$R *.lfm}
 

@@ -4,7 +4,7 @@ object FormMemory: TFormMemory
   Top = 116
   Width = 800
   BorderIcons = [biSystemMenu]
-  Caption = 'FormMemory'
+  Caption = 'Развитие памяти'
   ClientHeight = 800
   ClientWidth = 800
   Constraints.MaxHeight = 800

@@ -59,7 +59,7 @@ begin
   FHeight := 5;
   FWidth := 5;
   FScore := 0;
-  FTimerSteps := 1000;
+  FTimerSteps := 500;
   InitField;
 end;
 

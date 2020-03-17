@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 663
+  Left = 956
   Height = 300
-  Top = 403
+  Top = 617
   Width = 900
   BorderIcons = [biSystemMenu]
   Caption = 'App'
@@ -26,7 +26,7 @@ object FormMain: TFormMain
       Height = 250
       Top = 25
       Width = 250
-      Caption = 'Внимание'
+      Caption = 'Тренажер'
       Constraints.MaxHeight = 250
       Constraints.MaxWidth = 250
       Constraints.MinHeight = 250

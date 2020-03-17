@@ -66,7 +66,7 @@ begin
   else begin
     dec(FScore, 10);
   end;
-  pnlScore.caption := 'Score: ' + IntToStr(FScore);;
+  pnlScore.caption := 'Score: ' + IntToStr(FScore);
   InitSeq;
 end;
 

@@ -1,10 +1,10 @@
 object FormAttention: TFormAttention
-  Left = 557
+  Left = 1014
   Height = 500
-  Top = 208
+  Top = 189
   Width = 600
   BorderIcons = [biSystemMenu]
-  Caption = 'FormAttention'
+  Caption = 'Развитие внимания'
   ClientHeight = 500
   ClientWidth = 600
   Constraints.MaxHeight = 500

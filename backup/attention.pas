@@ -94,7 +94,7 @@ end;
 
 procedure TFormAttention.pnlBtn1Click(Sender: TObject);
 begin
-  if StrToInt((Sender as TPanel).caption) = FCorrect then
+  if StrToInt((Sender as TPanel).caption) - 1 = FCorrect then
   begin
     FScore := FScore + 1;
     FLen := max(FLen - 5, MIN_LEN);
