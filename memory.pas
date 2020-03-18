@@ -28,6 +28,7 @@ type
     FShapes: array[1..MAX_GAME_SIZE, 1..MAX_GAME_SIZE] of TShape;
     FMask: array[1..MAX_GAME_SIZE, 1..MAX_GAME_SIZE] of Integer;
     FMarked: array[1..MAX_GAME_SIZE, 1..MAX_GAME_SIZE] of Integer;
+    FTargetColor: array[1..MAX_GAME_SIZE, 1..MAX_GAME_SIZE] of TColor;
     FScore: Integer;
     FCntBlocks: Integer;
     FHeight, FWidth: Integer;
@@ -64,6 +65,11 @@ begin
 end;
 
 procedure TFormMemory.timerGameTimer(Sender: TObject);
+var
+  curR, curG, curB: Byte;
+  ttR, ttG, ttB: Byte;
+  i, j: Integer;
+  dif: Integer;
 begin
   inc(FCurTimerStep, FTimerStep);
   if (FCurTimerStep = FTimerSteps) then
@@ -73,11 +79,27 @@ begin
     btnDone.caption := 'ГОТОВО';
     HideField;
   end;
+  for i:=1 to FHeight do begin
+    for j:= 1 to FWidth do begin
+      RedGreenBlue(FShapes[i, j].Brush.Color, curR, curG, curB);
+      RedGreenBlue(FTargetColor[i, j], ttR, ttG, ttB);
+      dif := (ttR - curR) div 10;
+      if (dif = 0) and (ttR <> curR) then dif := 1;
+      inc(curR, dif);
+      dif := (ttG - curG) div 10;
+      if (dif = 0) and (ttG <> curG) then dif := 1;
+      inc(curG, dif);
+      dif := (ttB - curB) div 10;
+      if (dif = 0) and (ttB <> curB) then dif := 1;
+      inc(curB, dif);
+      FShapes[i, j].Brush.Color := RGBToColor(curR, curG, curB);
+    end;
+  end;
 end;
 
 procedure TFormMemory.ChangeColor(i, j: Integer; clr: TColor);
 begin
-  FShapes[i, j].Brush.Color := clr;
+  FTargetColor[i, j] := clr;
 end;
 
 procedure TFormMemory.btnDoneClick(Sender: TObject);
