@@ -20,9 +20,8 @@
         <ComponentName Value="FormMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="26"/>
-        <CursorPos X="33" Y="40"/>
+        <TopLine Value="2"/>
+        <CursorPos X="13" Y="44"/>
         <UsageCount Value="29"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -46,9 +45,10 @@
         <ComponentName Value="FormMemory"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="92"/>
-        <CursorPos X="7" Y="110"/>
+        <TopLine Value="61"/>
+        <CursorPos X="55" Y="84"/>
         <UsageCount Value="26"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -67,22 +67,23 @@
         <LoadedDesigner Value="True"/>
       </Unit4>
       <Unit5>
+        <Filename Value="help.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormHelp"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <CursorPos Y="3"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit5>
+      <Unit6>
         <Filename Value="attention.lfm"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="13"/>
         <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit5>
-      <Unit6>
-        <Filename Value="help.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormHelp"/>
-        <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
-        <CursorPos X="21" Y="17"/>
-        <UsageCount Value="21"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit6>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
