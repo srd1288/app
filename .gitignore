@@ -29,6 +29,3 @@ lib/
 # Application bundle for Mac OS
 *.app/
 
-#scores
-*.json
-r*.txt

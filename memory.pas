@@ -55,6 +55,9 @@ implementation
 { TFormMemory }
 
 procedure TFormMemory.FormCreate(Sender: TObject);
+var
+  fl: TextFile;
+  sc: string;
 begin
   randomize;
   FCntBlocks := 5;
@@ -62,6 +65,17 @@ begin
   FWidth := 5;
   FScore := 0;
   FTimerSteps := 500;
+  if not FileExists('rmemory.txt') then begin
+      assignfile(fl, 'rmemory.txt');
+      rewrite(fl);
+      writeln(fl, '0');
+      closefile(fl);
+  end;
+  AssignFile(fl, 'rmemory.txt');
+  Reset(fl);
+  Readln(fl, sc);
+  FMaxScore := StrToInt(sc);
+  CloseFile(fl);
   InitField;
 end;
 
@@ -106,6 +120,7 @@ end;
 procedure TFormMemory.btnDoneClick(Sender: TObject);
 var
   i, j, cntGood, cntBad: Integer;
+  fl: TextFile;
 begin
   cntGood := 0;
   cntBad := 0;
@@ -133,6 +148,11 @@ begin
       end;
     end;
     inc(FScore, cntGood - cntBad * 2);
+    FMaxScore := max(FMaxScore, FScore);
+    assignFile(fl, 'rmemory.txt');
+    rewrite(fl);
+    writeln(fl, IntToStr(FMaxScore));
+    closeFile(fl);
     lblScore.caption := Concat('Score: ', IntToStr(FScore));
   end
   else if (btnDone.caption = 'OK') then begin

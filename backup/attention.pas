@@ -37,7 +37,7 @@ type
   private
     FColorStr: array[0..20] of string;
     FColorCl: array[0..20] of TColor;
-    FLen, FCount, FScore: Integer;
+    FLen, FCount, FScore, FMaxScore: Integer;
     FCorrect: Integer;
   public
 
@@ -53,6 +53,9 @@ implementation
 { TFormAttention }
 
 procedure TFormAttention.FormCreate(Sender: TObject);
+var
+  fl: TextFile;
+  sc: string;
 begin         
   randomize;
   FColorStr[0] := 'Красный';
@@ -73,6 +76,11 @@ begin
   FColorCl[7] := ClPurple;
   FLen := MAX_LEN;
   FScore := 0;
+  AssignFile(fl, 'rattn.txt');
+  Reset(fl);
+  Readln(fl, sc);
+  FMaxScore := StrToInt(sc);
+  CloseFile(fl);
   InitGame;
 end;
 
@@ -93,6 +101,8 @@ begin
 end;
 
 procedure TFormAttention.pnlBtn1Click(Sender: TObject);
+var
+  fl: TextFile;
 begin
   if StrToInt((Sender as TPanel).caption) - 1 = FCorrect then
   begin
@@ -103,7 +113,11 @@ begin
   begin
     FScore := max(0, FScore - 10);
     FLen := min(FLen + 5, MAX_LEN);
-  end;   
+  end;
+  FMaxScore := max(FScore, FMaxScore);
+  AssignFile(fl, 'rattn.txt');
+  Rewrite(fl);
+  Writeln(fl, IntToStr(FMaxScore));
   initGame();
 end;
 

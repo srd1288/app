@@ -19,6 +19,7 @@ type
     MainMenu: TMainMenu;
     itemHelp: TMenuItem;
     itemAbout: TMenuItem;
+    itemRecords: TMenuItem;
     pnlAttention: TPanel;
     pnlMemory: TPanel;
     pnlLogic: TPanel;
@@ -28,6 +29,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure itemAboutClick(Sender: TObject);
     procedure itemHelpClick(Sender: TObject);
+    procedure itemRecordsClick(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
   private
 
@@ -41,7 +43,7 @@ var
 implementation
 
 uses
-  attention, memory, logic, help, about;
+  attention, memory, logic, help, about, records;
 
 {$R *.lfm}
 
@@ -104,6 +106,11 @@ end;
 procedure TFormMain.itemHelpClick(Sender: TObject);
 begin
   FormHelp.ShowModal;
+end;
+
+procedure TFormMain.itemRecordsClick(Sender: TObject);
+begin
+  FormRecords.ShowModal;
 end;
 
 procedure TFormMain.MenuItem1Click(Sender: TObject);

@@ -5,7 +5,7 @@ unit logic;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Math;
 
 const
   Sequences: array [1..6, 1..6] of string =
@@ -35,6 +35,7 @@ type
   private
     FSeqId: Integer;
     FScore: Integer;
+    FMaxScore: Integer;
   public
 
   end;
@@ -49,15 +50,24 @@ implementation
 { TFormLogic }
 
 procedure TFormLogic.FormCreate(Sender: TObject);
+var
+  fl: TextFile;
+  sc: string;
 begin
   randomize;
   FScore := 0;
   InitSeq;
+  AssignFile(fl, 'rlogic.txt');
+  Reset(fl);
+  Readln(fl, sc);
+  FMaxScore := StrToInt(sc);
+  CloseFile(fl);
 end;
 
 procedure TFormLogic.btnOkClick(Sender: TObject);
 var
   curVal: string;
+  fl: TextFile;
 begin
   curVal := editInput.text;
   if curVal = Sequences[FSeqId, 6] then begin
@@ -66,6 +76,11 @@ begin
   else begin
     dec(FScore, 10);
   end;
+  FMaxScore := max(FMaxScore, FScore);
+  AssignFile(fl, 'rlogic.txt');
+  Rewrite(fl);
+  Writeln(fl, IntToStr(FMaxScore));
+  CloseFile(fl);
   pnlScore.caption := 'Score: ' + IntToStr(FScore);
   InitSeq;
 end;

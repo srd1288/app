@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 726
+  Left = 643
   Height = 320
-  Top = 292
+  Top = 290
   Width = 900
   BorderIcons = [biSystemMenu]
   Caption = 'Тренажер'
@@ -84,6 +84,10 @@ object FormMain: TFormMain
   object MainMenu: TMainMenu
     left = 16
     top = 8
+    object itemRecords: TMenuItem
+      Caption = 'Рекорды'
+      OnClick = itemRecordsClick
+    end
     object itemHelp: TMenuItem
       Caption = 'Справка'
       OnClick = itemHelpClick
