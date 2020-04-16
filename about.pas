@@ -5,10 +5,14 @@ unit about;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
 
 type
+
+  { TFormAbout }
+
   TFormAbout = class(TForm)
+    memoAbout: TMemo;
   private
 
   public

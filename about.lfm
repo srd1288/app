@@ -1,8 +1,36 @@
 object FormAbout: TFormAbout
-  Left = 410
-  Height = 240
-  Top = 178
-  Width = 320
-  Caption = 'FormAbout'
+  Left = 732
+  Height = 289
+  Top = 269
+  Width = 411
+  Caption = 'О программе'
+  ClientHeight = 289
+  ClientWidth = 411
   LCLVersion = '2.0.6.0'
+  object memoAbout: TMemo
+    Left = 16
+    Height = 258
+    Top = 16
+    Width = 378
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Lines.Strings = (
+      'Программа-тренажер для развития логики,  памяти и внимания'
+      ''
+      'Разработчики:'
+      ''
+      'Цехненко Семен - программист'
+      'https://github.com/watemus'
+      'https://codeforces.com/profile/watemus'
+      'https://codestats.net/users/watemus'
+      ''
+      'Карпова Анастасия - психолог'
+      ''
+      'Агаркова Дарина - дизайнер'
+      ''
+      'License: '
+      'MIT'
+    )
+    ReadOnly = True
+    TabOrder = 0
+  end
 end

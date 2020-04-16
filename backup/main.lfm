@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 1307
+  Left = 726
   Height = 320
-  Top = 286
+  Top = 292
   Width = 900
   BorderIcons = [biSystemMenu]
   Caption = 'Тренажер'
@@ -12,6 +12,7 @@ object FormMain: TFormMain
   Constraints.MinHeight = 320
   Constraints.MinWidth = 900
   Menu = MainMenu
+  OnCreate = FormCreate
   LCLVersion = '2.0.6.0'
   object pnlAttention: TPanel
     Left = 0
@@ -89,6 +90,7 @@ object FormMain: TFormMain
     end
     object itemAbout: TMenuItem
       Caption = 'О программе'
+      OnClick = itemAboutClick
     end
   end
 end

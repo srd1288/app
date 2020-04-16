@@ -5,7 +5,7 @@ unit main;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, fpjson, jsonparser,
   Menus;
 
 type
@@ -25,6 +25,8 @@ type
     procedure btnAttentionClick(Sender: TObject);
     procedure btnLogicClick(Sender: TObject);
     procedure btnMemoryClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure itemAboutClick(Sender: TObject);
     procedure itemHelpClick(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
   private
@@ -39,7 +41,7 @@ var
 implementation
 
 uses
-  attention, memory, logic, help;
+  attention, memory, logic, help, about;
 
 {$R *.lfm}
 
@@ -47,17 +49,56 @@ uses
 
 procedure TFormMain.btnAttentionClick(Sender: TObject);
 begin
+  FormAttention.Free;
+  Application.CreateForm(TFormAttention, FormAttention);
   FormAttention.ShowModal;
 end;
 
 procedure TFormMain.btnLogicClick(Sender: TObject);
 begin
+  FormLogic.Free;
+  Application.CreateForm(TFormLogic, FormLogic);
   FormLogic.ShowModal;
 end;
 
 procedure TFormMain.btnMemoryClick(Sender: TObject);
 begin
+  FormMemory.Free;
+  Application.CreateForm(TFormMemory, FormMemory);
   FormMemory.ShowModal;
+end;
+
+procedure TFormMain.FormCreate(Sender: TObject);
+var
+  st_content: string;
+  fl: TextFile;
+begin
+  if not FileExists('rmemory.txt') then begin
+      st_content := '0';
+      assignfile(fl, 'rmemory.txt');
+      reset(fl);
+      writeln(fl, '0');
+      closefile(fl);
+  end;
+  if not FileExists('rlogic.txt') then begin
+      st_content := '0';
+      assignfile(fl, 'rlogic.txt');
+      reset(fl);
+      writeln(fl, '0');
+      closefile(fl);
+  end;
+  if not FileExists('rattn.txt') then begin
+      st_content := '0';
+      assignfile(fl, 'rattn.txt');
+      reset(fl);
+      writeln(fl, '0');
+      closefile(fl);
+  end;
+end;
+
+procedure TFormMain.itemAboutClick(Sender: TObject);
+begin
+  FormAbout.ShowModal;
 end;
 
 procedure TFormMain.itemHelpClick(Sender: TObject);

@@ -1,7 +1,7 @@
 object FormMemory: TFormMemory
-  Left = 641
+  Left = 598
   Height = 800
-  Top = 152
+  Top = 135
   Width = 800
   BorderIcons = [biSystemMenu]
   Caption = 'Развитие памяти'

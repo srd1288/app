@@ -1,7 +1,7 @@
 object FormHelp: TFormHelp
-  Left = 1130
+  Left = 1746
   Height = 317
-  Top = 231
+  Top = 288
   Width = 510
   Caption = 'Cправка'
   ClientHeight = 317

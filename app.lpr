@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, main, attention, memory, logic, help;
+  Forms, main, attention, memory, logic, help, about;
 
 {$R *.res}
 
@@ -20,6 +20,7 @@ begin
   Application.CreateForm(TFormMemory, FormMemory);
   Application.CreateForm(TFormLogic, FormLogic);
   Application.CreateForm(TFormHelp, FormHelp);
+  Application.CreateForm(TFormAbout, FormAbout);
   Application.Run;
 end.
 

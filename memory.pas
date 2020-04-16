@@ -35,6 +35,7 @@ type
     FCreatedField: Boolean;
     FGameStarted: Boolean;
     FTimerSteps, FCurTimerStep, FTimerStep: Integer;
+    FMaxScore: Integer;
     procedure InitField;
     procedure HideField;
     procedure ShapeClick(Sender: TObject);
@@ -131,7 +132,7 @@ begin
         end;
       end;
     end;
-    FScore := cntGood - cntBad * 2;
+    inc(FScore, cntGood - cntBad * 2);
     lblScore.caption := Concat('Score: ', IntToStr(FScore));
   end
   else if (btnDone.caption = 'OK') then begin
@@ -150,6 +151,14 @@ begin
     FTimerStep := 1;
     FTimerSteps := max(FTimerSteps - 10, 200);
     btnDone.caption := 'ЖДЕМ...';
+    for i := 1 to FHeight do
+    begin
+      for j := 1 to FWidth do
+      begin
+        FMask[i, j] := 0;
+        FMarked[i, j] := 0;
+      end;
+    end;
     for i := 1 to FCntBlocks do
     begin
       FMask[random(FHeight) + 1, random(FWidth) + 1] := 1;
@@ -167,7 +176,6 @@ begin
         FShapes[i, j].shape := stRectangle;
         FShapes[i, j].OnClick := @ShapeClick;
         ChangeColor(i, j, clWhite);
-        FMarked[i, j] := 0;
         if FMask[i, j] = 1 then
         begin
           ChangeColor(i, j, clBlack);

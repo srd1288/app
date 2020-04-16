@@ -1,7 +1,7 @@
 object FormAttention: TFormAttention
-  Left = 1014
+  Left = 1752
   Height = 500
-  Top = 189
+  Top = 304
   Width = 600
   BorderIcons = [biSystemMenu]
   Caption = 'Развитие внимания'
