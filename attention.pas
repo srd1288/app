@@ -110,7 +110,7 @@ end;
 procedure TFormAttention.shuffle;
 var
   i, j: Integer;
-  tmpc: TCOlor;
+  tmpc: TColor;
   tmps: string;
 begin
   for i:=0 to 7 do
