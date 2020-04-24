@@ -5,7 +5,7 @@ unit logic;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Math;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Math, main, LCLType;
 
 const
   Sequences: array [1..6, 1..6] of string =
@@ -79,12 +79,18 @@ begin
     dec(FScore, 10);
   end;
   FMaxScore := max(FMaxScore, FScore);
+  scoreLog := max(FScore, scoreLog);
+
   {
   AssignFile(fl, 'rlogic.txt');
   Rewrite(fl);
   Writeln(fl, IntToStr(FMaxScore));
   CloseFile(fl);                                   }
-  pnlScore.caption := 'Score: ' + IntToStr(FScore);
+  pnlScore.caption := 'Score: ' + IntToStr(FScore) + '/' + IntToStr(targetLog);
+  if scoreLog >= targetLog then begin
+    Application.MessageBox('Цель выполнена', 'Цель', MB_ICONINFORMATION);
+    FormLogic.close;
+  end;
   InitSeq;
 end;
 

@@ -75,9 +75,12 @@ end;
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
   randomize;
-  targetAttn := 40 + random(30);
-  targetMem := 50 + random(20);
-  targetLog := 30 + random(30);
+  targetAttn := 1 {40 + random(30)};
+  targetMem := 1 {50 + random(20)};
+  targetLog := 1 {30 + random(30)};
+  scoreAttn := 0;
+  scoreMem := 0;
+  scoreLog := 0;
 end;
 
 procedure TFormMain.itemAboutClick(Sender: TObject);

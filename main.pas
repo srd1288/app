@@ -75,9 +75,9 @@ end;
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
   randomize;
-  targetAttn := 40 + random(30);
-  targetMem := 50 + random(20);
-  targetLog := 30 + random(30);
+  targetAttn := {1} {<- debug} 40 + random(30);
+  targetMem := {1} {<- debug} 50 + random(20);
+  targetLog := {1} {<- debug} 30 + random(30);
   scoreAttn := 0;
   scoreMem := 0;
   scoreLog := 0;

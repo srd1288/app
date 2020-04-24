@@ -5,7 +5,7 @@ unit memory;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Math;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Math, main, LCLType;
 
 const
   MAX_GAME_SIZE = 10;
@@ -77,7 +77,6 @@ begin
   Readln(fl, sc);
   FMaxScore := StrToInt(sc);
   }
-  CloseFile(fl);
   InitField;
 end;
 
@@ -151,11 +150,18 @@ begin
     end;
     inc(FScore, cntGood - cntBad * 2);
     FMaxScore := max(FMaxScore, FScore);
+    scoreMem := max(scoreMem, FScore);
+    {
     assignFile(fl, 'rmemory.txt');
     rewrite(fl);
     writeln(fl, IntToStr(FMaxScore));
     closeFile(fl);
-    lblScore.caption := Concat('Score: ', IntToStr(FScore));
+    }
+    lblScore.caption := Concat('Score: ', IntToStr(FScore), '/', targetMem);
+    if scoreMem >= targetMem then begin
+      Application.MessageBox('Цель выполнена', 'Цель', MB_ICONINFORMATION);
+      FormMemory.close;
+    end;
   end
   else if (btnDone.caption = 'OK') then begin
     btnDone.caption := 'ГОТОВО';

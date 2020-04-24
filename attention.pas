@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ActnList,
-  ExtCtrls, ComCtrls, Math, main;
+  ExtCtrls, ComCtrls, Math, main, LCLType;
 
 const
   MAX_LEN = 500;
@@ -92,7 +92,7 @@ begin
   bar.Max := FLen;
   bar.Position := 0;
   FCount := 0;
-  laScore.caption := Concat('Score: ', IntToStr(FScore));
+  laScore.caption := Concat('Score: ', IntToStr(FScore), '/', IntToStr(targetAttn));
   shuffle;
   pnlBtn1.color := FColorCl[0];
   pnlBtn2.color := FColorCl[1];
@@ -119,6 +119,10 @@ begin
   end;
   FMaxScore := max(FScore, FMaxScore);
   scoreAttn := max(scoreAttn, FScore);
+  if scoreAttn >= targetAttn then begin
+    Application.MessageBox('Цель выполнена', 'Цель', MB_ICONINFORMATION);
+    FormAttention.close;
+  end;
   {
   AssignFile(fl, 'rattn.txt');
   Rewrite(fl);
