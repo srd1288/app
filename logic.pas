@@ -83,9 +83,8 @@ begin
   AssignFile(fl, 'rlogic.txt');
   Rewrite(fl);
   Writeln(fl, IntToStr(FMaxScore));
-  CloseFile(fl);
+  CloseFile(fl);                                   }
   pnlScore.caption := 'Score: ' + IntToStr(FScore);
-  }
   InitSeq;
 end;
 
