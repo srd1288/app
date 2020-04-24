@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 643
+  Left = 261
   Height = 320
-  Top = 290
+  Top = 58
   Width = 900
   BorderIcons = [biSystemMenu]
   Caption = 'Тренажер'

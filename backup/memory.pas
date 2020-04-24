@@ -66,7 +66,6 @@ begin
   FScore := 0;
   FTimerSteps := 500;
   if not FileExists('rmemory.txt') then begin
-      st_content := '0';
       assignfile(fl, 'rmemory.txt');
       rewrite(fl);
       writeln(fl, '0');

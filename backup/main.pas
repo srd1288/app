@@ -110,7 +110,7 @@ end;
 
 procedure TFormMain.itemRecordsClick(Sender: TObject);
 begin
-
+  FormRecords.ShowModal;
 end;
 
 procedure TFormMain.MenuItem1Click(Sender: TObject);

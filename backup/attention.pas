@@ -118,6 +118,7 @@ begin
   AssignFile(fl, 'rattn.txt');
   Rewrite(fl);
   Writeln(fl, IntToStr(FMaxScore));
+  CloseFile(fl);
   initGame();
 end;
 

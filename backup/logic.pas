@@ -79,7 +79,7 @@ begin
   FMaxScore := max(FMaxScore, FScore);
   AssignFile(fl, 'rlogic.txt');
   Rewrite(fl);
-  Writeln(IntToStr(FMaxScore));
+  Writeln(fl, IntToStr(FMaxScore));
   CloseFile(fl);
   pnlScore.caption := 'Score: ' + IntToStr(FScore);
   InitSeq;
