@@ -39,6 +39,8 @@ type
 
 var
   FormMain: TFormMain;
+  targetAttn, targetMem, targetLog: Integer;
+  scoreAttn, scoreMem, scoreLog: Integer;
 
 implementation
 
@@ -71,31 +73,11 @@ begin
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
-var
-  st_content: string;
-  fl: TextFile;
 begin
-  if not FileExists('rmemory.txt') then begin
-      st_content := '0';
-      assignfile(fl, 'rmemory.txt');
-      rewrite(fl);
-      writeln(fl, '0');
-      closefile(fl);
-  end;
-  if not FileExists('rlogic.txt') then begin
-      st_content := '0';
-      assignfile(fl, 'rlogic.txt');
-      rewrite(fl);
-      writeln(fl, '0');
-      closefile(fl);
-  end;
-  if not FileExists('rattn.txt') then begin
-      st_content := '0';
-      assignfile(fl, 'rattn.txt');
-      rewrite(fl);
-      writeln(fl, '0');
-      closefile(fl);
-  end;
+  randomize;
+  targetAttn := 40 + random(30);
+  targetMem := 50 + random(20);
+  targetLog := 30 + random(30);
 end;
 
 procedure TFormMain.itemAboutClick(Sender: TObject);

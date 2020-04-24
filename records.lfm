@@ -1,7 +1,7 @@
 object FormRecords: TFormRecords
-  Left = 504
+  Left = 670
   Height = 270
-  Top = 227
+  Top = 222
   Width = 459
   Caption = 'Рекорды'
   ClientHeight = 270
@@ -37,5 +37,11 @@ object FormRecords: TFormRecords
     Font.Height = -53
     ParentColor = False
     ParentFont = False
+  end
+  object Timer1: TTimer
+    Interval = 100
+    OnTimer = Timer1Timer
+    left = 367
+    top = 16
   end
 end

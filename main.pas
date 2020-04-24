@@ -39,6 +39,8 @@ type
 
 var
   FormMain: TFormMain;
+  targetAttn, targetMem, targetLog: Integer;
+  scoreAttn, scoreMem, scoreLog: Integer;
 
 implementation
 
@@ -71,10 +73,14 @@ begin
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
-var
-  st_content: string;
-  fl: TextFile;
 begin
+  randomize;
+  targetAttn := 40 + random(30);
+  targetMem := 50 + random(20);
+  targetLog := 30 + random(30);
+  scoreAttn := 0;
+  scoreMem := 0;
+  scoreLog := 0;
 end;
 
 procedure TFormMain.itemAboutClick(Sender: TObject);

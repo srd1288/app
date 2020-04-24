@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ActnList,
-  ExtCtrls, ComCtrls, Math;
+  ExtCtrls, ComCtrls, Math, main;
 
 const
   MAX_LEN = 500;
@@ -37,10 +37,10 @@ type
   private
     FColorStr: array[0..20] of string;
     FColorCl: array[0..20] of TColor;
-    FLen, FCount, FScore, FMaxScore: Integer;
+    FLen, FCount, FScore : Integer;
     FCorrect: Integer;
   public
-
+        FMaxScore: Integer;
   end;
 
 var
@@ -76,11 +76,14 @@ begin
   FColorCl[7] := ClPurple;
   FLen := MAX_LEN;
   FScore := 0;
+  FMaxScore := 0;
+  {
   AssignFile(fl, 'rattn.txt');
   Reset(fl);
   Readln(fl, sc);
   FMaxScore := StrToInt(sc);
   CloseFile(fl);
+  }
   InitGame;
 end;
 
@@ -115,10 +118,13 @@ begin
     FLen := min(FLen + 5, MAX_LEN);
   end;
   FMaxScore := max(FScore, FMaxScore);
+  scoreAttn := max(scoreAttn, FMaxScore);
+  {
   AssignFile(fl, 'rattn.txt');
   Rewrite(fl);
   Writeln(fl, IntToStr(FMaxScore));
   CloseFile(fl);
+  }
   initGame();
 end;
 

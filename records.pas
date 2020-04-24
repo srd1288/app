@@ -5,7 +5,8 @@ unit records;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
+  main, attention;
 
 type
 
@@ -15,7 +16,9 @@ type
     lblAttn: TLabel;
     lblMemory: TLabel;
     lblLogic: TLabel;
+    Timer1: TTimer;
     procedure FormCreate(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
 
   public
@@ -33,6 +36,16 @@ implementation
 
 procedure TFormRecords.FormCreate(Sender: TObject);
 begin
+  lblAttn.caption := 'Внимание: ' + IntToStr(scoreAttn) + '/' + IntToStr(targetAttn);
+  lblMemory.caption := 'Память: ' + IntToStr(scoreMem) + '/' + IntToStr(targetMem);
+  lblLogic.caption := 'Логика: ' + IntToStr(scoreLog) + '/' + IntToStr(targetLog);
+end;
+
+procedure TFormRecords.Timer1Timer(Sender: TObject);
+begin
+  lblAttn.caption := 'Внимание: ' + IntToStr(scoreAttn) + '/' + IntToStr(targetAttn);
+  lblMemory.caption := 'Память: ' + IntToStr(scoreMem) + '/' + IntToStr(targetMem);
+  lblLogic.caption := 'Логика: ' + IntToStr(scoreLog) + '/' + IntToStr(targetLog);
 end;
 
 end.
