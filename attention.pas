@@ -76,11 +76,13 @@ begin
   FColorCl[7] := ClPurple;
   FLen := MAX_LEN;
   FScore := 0;
+  {
   AssignFile(fl, 'rattn.txt');
   Reset(fl);
   Readln(fl, sc);
   FMaxScore := StrToInt(sc);
   CloseFile(fl);
+  }
   InitGame;
 end;
 
@@ -115,10 +117,12 @@ begin
     FLen := min(FLen + 5, MAX_LEN);
   end;
   FMaxScore := max(FScore, FMaxScore);
+  {
   AssignFile(fl, 'rattn.txt');
   Rewrite(fl);
   Writeln(fl, IntToStr(FMaxScore));
   CloseFile(fl);
+  }
   initGame();
 end;
 

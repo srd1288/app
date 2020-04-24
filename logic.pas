@@ -57,11 +57,13 @@ begin
   randomize;
   FScore := 0;
   InitSeq;
+  {
   AssignFile(fl, 'rlogic.txt');
   Reset(fl);
   Readln(fl, sc);
-  FMaxScore := StrToInt(sc);
+  FMaxScore := StrToInt(sc)
   CloseFile(fl);
+  }
 end;
 
 procedure TFormLogic.btnOkClick(Sender: TObject);
@@ -77,11 +79,13 @@ begin
     dec(FScore, 10);
   end;
   FMaxScore := max(FMaxScore, FScore);
+  {
   AssignFile(fl, 'rlogic.txt');
   Rewrite(fl);
   Writeln(fl, IntToStr(FMaxScore));
   CloseFile(fl);
   pnlScore.caption := 'Score: ' + IntToStr(FScore);
+  }
   InitSeq;
 end;
 

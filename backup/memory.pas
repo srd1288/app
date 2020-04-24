@@ -65,6 +65,7 @@ begin
   FWidth := 5;
   FScore := 0;
   FTimerSteps := 500;
+  {
   if not FileExists('rmemory.txt') then begin
       assignfile(fl, 'rmemory.txt');
       rewrite(fl);
@@ -75,6 +76,7 @@ begin
   Reset(fl);
   Readln(fl, sc);
   FMaxScore := StrToInt(sc);
+  }
   CloseFile(fl);
   InitField;
 end;

@@ -1,7 +1,7 @@
 object FormLogic: TFormLogic
-  Left = 305
+  Left = 128
   Height = 400
-  Top = 175
+  Top = 111
   Width = 800
   Caption = 'Развитие логики'
   ClientHeight = 400
