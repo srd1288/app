@@ -1,11 +1,12 @@
 object FormHelp: TFormHelp
-  Left = 225
+  Left = 214
   Height = 317
-  Top = 146
+  Top = 150
   Width = 510
   Caption = 'Cправка'
   ClientHeight = 317
   ClientWidth = 510
+  Color = 8676683
   LCLVersion = '2.0.6.0'
   object Memo1: TMemo
     Left = 24
@@ -23,7 +24,7 @@ object FormHelp: TFormHelp
       ''
       'Игра «Восстанови поле»'
       ''
-      'Необходимо запомнить и восстановить расположение черных квадратиков'
+      'Необходимо запомнить и восстановить расположение темно-синих квадратиков'
       ''
       'Развитие логики:'
       ''

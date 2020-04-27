@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ActnList,
-  ExtCtrls, ComCtrls, Math, main, LCLType;
+  ExtCtrls, ComCtrls, Math, main, LCLType, BGRAFlashProgressBar;
 
 const
   MAX_LEN = 500;
@@ -17,6 +17,7 @@ type
   { TFormAttention }
 
   TFormAttention = class(TForm)
+    bar: TBGRAFlashProgressBar;
     laScore: TLabel;
     laText: TLabel;
     pnlScore: TPanel;
@@ -27,7 +28,6 @@ type
     pnlButtons: TPanel;
     pnlText: TPanel;
     pnlStatus: TPanel;
-    bar: TProgressBar;
     timer: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure InitGame();
@@ -89,10 +89,11 @@ end;
 
 procedure TFormAttention.InitGame();
 begin
-  bar.Max := FLen;
-  bar.Position := 0;
+  bar.MaxValue := FLen;
+  bar.Value := 0;
   FCount := 0;
   laScore.caption := Concat('Score: ', IntToStr(FScore), '/', IntToStr(targetAttn));
+  randomize;
   shuffle;
   pnlBtn1.color := FColorCl[0];
   pnlBtn2.color := FColorCl[1];
@@ -153,7 +154,7 @@ end;
 procedure TFormAttention.timerTimer(Sender: TObject);
 begin
   inc(FCount);
-  bar.Position := bar.Position + 1;
+  bar.Value := bar.Value + 1;
   if (FCount = FLen) then
   begin
     FScore := max(0, FScore - 10);

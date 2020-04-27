@@ -1,11 +1,12 @@
 object FormRecords: TFormRecords
-  Left = 670
+  Left = 245
   Height = 270
-  Top = 222
+  Top = 247
   Width = 459
   Caption = 'Рекорды'
   ClientHeight = 270
   ClientWidth = 459
+  Color = 8676683
   OnCreate = FormCreate
   LCLVersion = '2.0.6.0'
   object lblAttn: TLabel
@@ -14,6 +15,7 @@ object FormRecords: TFormRecords
     Top = 16
     Width = 157
     Caption = 'lblAttn'
+    Font.Color = clWhite
     Font.Height = -53
     ParentColor = False
     ParentFont = False
@@ -24,6 +26,7 @@ object FormRecords: TFormRecords
     Top = 96
     Width = 254
     Caption = 'lblMemory'
+    Font.Color = clWhite
     Font.Height = -53
     ParentColor = False
     ParentFont = False
@@ -34,6 +37,7 @@ object FormRecords: TFormRecords
     Top = 176
     Width = 181
     Caption = 'lblLogic'
+    Font.Color = clWhite
     Font.Height = -53
     ParentColor = False
     ParentFont = False

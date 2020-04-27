@@ -5,7 +5,8 @@ unit memory;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Math, main, LCLType;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  Math, main, LCLType, BCMaterialDesignButton;
 
 const
   MAX_GAME_SIZE = 10;
@@ -15,7 +16,7 @@ type
   { TFormMemory }
 
   TFormMemory = class(TForm)
-    btnDone: TButton;
+    btnDone: TBCMaterialDesignButton;
     lblScore: TLabel;
     pnlBtn: TPanel;
     pnlScore: TPanel;
@@ -100,13 +101,13 @@ begin
       RedGreenBlue(FShapes[i, j].Brush.Color, curR, curG, curB);
       RedGreenBlue(FTargetColor[i, j], ttR, ttG, ttB);
       dif := (ttR - curR) div 10;
-      if (dif = 0) and (ttR <> curR) then dif := 1;
+      if (dif = 0) and (ttR <> curR) then dif := (ttR - curR) div (abs(curR - ttR));
       inc(curR, dif);
       dif := (ttG - curG) div 10;
-      if (dif = 0) and (ttG <> curG) then dif := 1;
+      if (dif = 0) and (ttG <> curG) then dif := (ttG - curG) div (abs(curG-ttG));
       inc(curG, dif);
       dif := (ttB - curB) div 10;
-      if (dif = 0) and (ttB <> curB) then dif := 1;
+      if (dif = 0) and (ttB <> curB) then dif := (ttB - curB)div(abs(curB-ttB));
       inc(curB, dif);
       FShapes[i, j].Brush.Color := RGBToColor(curR, curG, curB);
     end;
@@ -135,7 +136,7 @@ begin
       begin
         if (FMarked[i, j] xor FMask[i, j] = 0) then
         begin
-          ChangeColor(i, j, clGreen);
+          ChangeColor(i, j, TColor($0032BD44));
           if FMarked[i, j] = 1 then
           begin
             inc(cntGood);
@@ -203,10 +204,10 @@ begin
         FShapes[i, j].top := FShapes[i, j].height * (i - 1);
         FShapes[i, j].shape := stRectangle;
         FShapes[i, j].OnClick := @ShapeClick;
-        ChangeColor(i, j, clWhite);
+        ChangeColor(i, j, TColor($00B98029));
         if FMask[i, j] = 1 then
         begin
-          ChangeColor(i, j, clBlack);
+          ChangeColor(i, j, TColor($00753C27));
         end;
       end;
     end;
@@ -241,7 +242,7 @@ begin
     begin
       for j := 1 to FWidth do
       begin
-        ChangeColor(i, j, clWhite);
+        ChangeColor(i, j, TColor($00B98029));
       end;
     end;
   end;
@@ -257,12 +258,12 @@ begin
     j := (Sender as TShape).Left div (Sender as TShape).Width + 1;
     if FMarked[i, j] = 1 then
     begin
-      ChangeColor(i, j, clWhite);
+      ChangeColor(i, j, TColor($00B98029));
       FMarked[i, j] := 0;
     end
     else
     begin
-      ChangeColor(i, j, clGray);
+      ChangeColor(i, j, TColor($00753C27));
       FMarked[i, j] := 1;
     end;
   end;

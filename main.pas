@@ -6,16 +6,16 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, fpjson, jsonparser,
-  Menus;
+  Menus, BCButton, BGRAThemeButton, BGRATheme, BCMaterialDesignButton;
 
 type
 
   { TFormMain }
 
   TFormMain = class(TForm)
-    btnAttention: TButton;
-    btnMemory: TButton;
-    btnLogic: TButton;
+    btnAttention: TBCMaterialDesignButton;
+    btnMemory: TBCMaterialDesignButton;
+    btnLogic: TBCMaterialDesignButton;
     MainMenu: TMainMenu;
     itemHelp: TMenuItem;
     itemAbout: TMenuItem;

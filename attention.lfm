@@ -1,7 +1,7 @@
 object FormAttention: TFormAttention
-  Left = 152
+  Left = 326
   Height = 500
-  Top = 99
+  Top = 0
   Width = 600
   BorderIcons = [biSystemMenu]
   Caption = 'Развитие внимания'
@@ -19,15 +19,25 @@ object FormAttention: TFormAttention
     Top = 0
     Width = 600
     Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelColor = 8694800
     ClientHeight = 150
     ClientWidth = 600
+    Color = 8694800
+    ParentColor = False
     TabOrder = 0
-    object bar: TProgressBar
+    object bar: TBGRAFlashProgressBar
       Left = 0
-      Height = 50
+      Height = 56
       Top = 0
-      Width = 600
-      TabOrder = 0
+      Width = 599
+      MinValue = 0
+      MaxValue = 100
+      Value = 30
+      Color = 10604829
+      BackgroundColor = 8694800
+      BackgroundRandomizeMinIntensity = 4000
+      BackgroundRandomizeMaxIntensity = 5000
+      BackgroundRandomize = True
     end
   end
   object pnlText: TPanel
@@ -35,8 +45,13 @@ object FormAttention: TFormAttention
     Height = 100
     Top = 50
     Width = 600
+    BevelColor = 8694800
     ClientHeight = 100
     ClientWidth = 600
+    Color = 8694800
+    Font.Color = clWhite
+    ParentColor = False
+    ParentFont = False
     TabOrder = 1
     object laText: TLabel
       Tag = 25
@@ -47,6 +62,7 @@ object FormAttention: TFormAttention
       Align = alClient
       Alignment = taCenter
       Caption = 'ЦВЕТ'
+      Font.Color = clWhite
       Font.Height = -53
       ParentColor = False
       ParentFont = False
@@ -111,8 +127,11 @@ object FormAttention: TFormAttention
     Height = 100
     Top = 400
     Width = 600
+    BevelColor = 8694800
     ClientHeight = 100
     ClientWidth = 600
+    Color = 8694800
+    ParentColor = False
     TabOrder = 3
     object laScore: TLabel
       Left = 1
@@ -122,6 +141,7 @@ object FormAttention: TFormAttention
       Align = alClient
       Alignment = taCenter
       Caption = 'Score: 0'
+      Font.Color = clWhite
       Font.Height = -53
       ParentColor = False
       ParentFont = False

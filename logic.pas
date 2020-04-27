@@ -5,7 +5,8 @@ unit logic;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Math, main, LCLType;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  Math, main, LCLType, BCMaterialDesignButton;
 
 const
   Sequences: array [1..6, 1..6] of string =
@@ -23,7 +24,7 @@ type
   { TFormLogic }
 
   TFormLogic = class(TForm)
-    btnOk: TButton;
+    btnOk: TBCMaterialDesignButton;
     editInput: TEdit;
     pnlBtn: TPanel;
     pnlScore: TPanel;
@@ -80,7 +81,7 @@ begin
   end;
   FMaxScore := max(FMaxScore, FScore);
   scoreLog := max(FScore, scoreLog);
-
+  editInput.text := '0';
   {
   AssignFile(fl, 'rlogic.txt');
   Rewrite(fl);

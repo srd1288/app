@@ -6,16 +6,16 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, fpjson, jsonparser,
-  Menus;
+  Menus, BCButton, BGRAThemeButton, BGRATheme, BCMaterialDesignButton;
 
 type
 
   { TFormMain }
 
   TFormMain = class(TForm)
-    btnAttention: TButton;
-    btnMemory: TButton;
-    btnLogic: TButton;
+    btnAttention: TBCMaterialDesignButton;
+    btnMemory: TBCMaterialDesignButton;
+    btnLogic: TBCMaterialDesignButton;
     MainMenu: TMainMenu;
     itemHelp: TMenuItem;
     itemAbout: TMenuItem;
@@ -75,9 +75,9 @@ end;
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
   randomize;
-  targetAttn := 1 {40 + random(30)};
-  targetMem := 1 {50 + random(20)};
-  targetLog := 1 {30 + random(30)};
+  targetAttn := {1} {<- debug} 40 + random(30);
+  targetMem := {1} {<- debug} 50 + random(20);
+  targetLog := {1} {<- debug} 30 + random(30);
   scoreAttn := 0;
   scoreMem := 0;
   scoreLog := 0;

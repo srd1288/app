@@ -1,7 +1,7 @@
 object FormMemory: TFormMemory
-  Left = 427
+  Left = 555
   Height = 600
-  Top = 91
+  Top = 109
   Width = 600
   BorderIcons = [biSystemMenu]
   Caption = 'Развитие памяти'
@@ -18,6 +18,8 @@ object FormMemory: TFormMemory
     Height = 400
     Top = 0
     Width = 600
+    Color = 3325252
+    ParentColor = False
     TabOrder = 0
   end
   object pnlScore: TPanel
@@ -25,8 +27,11 @@ object FormMemory: TFormMemory
     Height = 202
     Top = 400
     Width = 300
+    BevelColor = 12156969
     ClientHeight = 202
     ClientWidth = 300
+    Color = 12156969
+    ParentColor = False
     TabOrder = 1
     object lblScore: TLabel
       Left = 1
@@ -36,10 +41,13 @@ object FormMemory: TFormMemory
       Align = alClient
       Alignment = taCenter
       Caption = 'Score: 0'
+      Color = 12156969
+      Font.Color = clWhite
       Font.Height = -53
       Layout = tlCenter
       ParentColor = False
       ParentFont = False
+      Transparent = False
     end
   end
   object pnlBtn: TPanel
@@ -47,19 +55,23 @@ object FormMemory: TFormMemory
     Height = 200
     Top = 400
     Width = 300
+    BevelColor = 12156969
     ClientHeight = 200
     ClientWidth = 300
+    Color = 12156969
+    ParentColor = False
     TabOrder = 2
-    object btnDone: TButton
-      Left = 8
-      Height = 185
+    object btnDone: TBCMaterialDesignButton
+      Left = 0
+      Height = 193
       Top = 8
-      Width = 288
-      Caption = 'ГОТОВО'
-      Font.Height = -53
+      Width = 299
+      NormalColor = 7683111
+      TextColor = clWhite
+      TextSize = 40
+      TextFont = 'default'
+      Caption = 'Готово'
       OnClick = btnDoneClick
-      ParentFont = False
-      TabOrder = 0
     end
   end
   object timerGame: TTimer

@@ -1,7 +1,7 @@
 object FormLogic: TFormLogic
-  Left = 128
+  Left = 69
   Height = 400
-  Top = 111
+  Top = 134
   Width = 800
   Caption = 'Развитие логики'
   ClientHeight = 400
@@ -17,8 +17,12 @@ object FormLogic: TFormLogic
     Height = 200
     Top = 0
     Width = 500
+    BevelColor = 6642940
     Caption = 'Seq'
+    Color = 6642940
+    Font.Color = clWhite
     Font.Height = -67
+    ParentColor = False
     ParentFont = False
     TabOrder = 0
   end
@@ -27,8 +31,11 @@ object FormLogic: TFormLogic
     Height = 200
     Top = 0
     Width = 300
+    BevelColor = 6642940
     ClientHeight = 200
     ClientWidth = 300
+    Color = 6642940
+    ParentColor = False
     TabOrder = 1
     object editInput: TEdit
       Left = 48
@@ -47,8 +54,12 @@ object FormLogic: TFormLogic
     Height = 200
     Top = 200
     Width = 500
+    BevelColor = 6642940
     Caption = 'Score: 0'
+    Color = 6642940
+    Font.Color = clWhite
     Font.Height = -53
+    ParentColor = False
     ParentFont = False
     TabOrder = 2
   end
@@ -57,20 +68,26 @@ object FormLogic: TFormLogic
     Height = 200
     Top = 200
     Width = 300
+    BevelColor = 6642940
     Caption = 'pnlBtn'
     ClientHeight = 200
     ClientWidth = 300
+    Color = 6642940
+    ParentColor = False
     TabOrder = 3
-    object btnOk: TButton
-      Left = 5
-      Height = 190
-      Top = 5
-      Width = 290
+    object btnOk: TBCMaterialDesignButton
+      Left = 8
+      Height = 176
+      Top = 16
+      Width = 283
+      NormalColor = 5913579
+      ShadowColor = clBlack
+      ShadowSize = 10
+      TextColor = clWhite
+      TextSize = 50
+      TextFont = 'default'
       Caption = 'OK'
-      Font.Height = -133
       OnClick = btnOkClick
-      ParentFont = False
-      TabOrder = 0
     end
   end
 end
